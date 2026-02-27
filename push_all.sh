@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+echo "------------------------------------------------"
+echo #
+echo "Push all git repositories script started"
+echo #
+
+# Get current directory
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Define push order
+# We want to push global_assets LAST because it triggers rebuilds of all other services
+# This avoids race conditions where a service is building while global_assets is also building it
+REPOS=("blog" "main" "profile" "global_assets")
+
+for dir_name in "${REPOS[@]}"; do
+    if [ -d "$dir_name/.git" ]; then
+        echo "Processing repository: $dir_name"
+        cd "$ROOT_DIR/$dir_name"
+
+        # Check for unpushed commits
+        UNPUSHED_COMMITS=$(git rev-list @{u}..HEAD 2>/dev/null | wc -l)
+
+        if [ "$UNPUSHED_COMMITS" -gt 0 ]; then
+            echo "Found $UNPUSHED_COMMITS unpushed commits in $dir_name. Pushing..."
+            git push
+            if [ $? -eq 0 ]; then
+                echo "Successfully pushed $dir_name"
+            else
+                echo "Error: Failed to push $dir_name"
+            fi
+        else
+            echo "No changes to push in $dir_name"
+        fi
+        
+        echo #
+        cd "$ROOT_DIR"
+    fi
+done
+
+echo "------------------------------------------------"
+echo #
+echo "Push all git repositories script done"
+exit 0
