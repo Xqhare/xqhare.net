@@ -1,5 +1,9 @@
+# Dev Env
 blog/
 global_assets/
 main/
 profile/
 webpage_startup_notes/
+
+# Prod Env
+Xqhare/
