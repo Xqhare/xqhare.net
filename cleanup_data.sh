@@ -18,7 +18,6 @@ for service in "${SERVICES[@]}"; do
         
         # List directories in data dir, sort them by name (which are timestamps), 
         # and remove all but the last 2.
-        # We use -r to sort in reverse, and then tail to skip the first 2.
         ENTRIES_TO_REMOVE=$(ls -1 "$DATA_DIR" 2>/dev/null | sort -r | tail -n +3)
 
         if [ -n "$ENTRIES_TO_REMOVE" ]; then
@@ -27,7 +26,7 @@ for service in "${SERVICES[@]}"; do
             
             while read -r entry; do
                 echo "Removing $DATA_DIR/$entry..."
-                rm -rf "$DATA_DIR/$entry"
+                sudo rm -rf "$DATA_DIR/$entry"
             done <<< "$ENTRIES_TO_REMOVE"
         else
             echo "No cleanup needed for $service (2 or fewer versions)."
