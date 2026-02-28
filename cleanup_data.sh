@@ -26,7 +26,7 @@ for service in "${SERVICES[@]}"; do
             
             while read -r entry; do
                 echo "Removing $DATA_DIR/$entry..."
-                sudo rm -rf "$DATA_DIR/$entry"
+                rm -rf "$DATA_DIR/$entry"
             done <<< "$ENTRIES_TO_REMOVE"
         else
             echo "No cleanup needed for $service (2 or fewer versions)."
