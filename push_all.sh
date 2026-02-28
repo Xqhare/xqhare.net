@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 echo "------------------------------------------------"
 echo #
@@ -7,13 +8,6 @@ echo #
 
 # Get current directory
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-echo "Pushing root repository..."
-echo #
-git push
-echo #
-echo "Pushing root repository done."
-echo #
 
 # Define push order
 # We want to push global_assets LAST because it triggers rebuilds of all other services
@@ -35,6 +29,7 @@ for dir_name in "${REPOS[@]}"; do
                 echo "Successfully pushed $dir_name"
             else
                 echo "Error: Failed to push $dir_name"
+                exit 1
             fi
         else
             echo "No changes to push in $dir_name"

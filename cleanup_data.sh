@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 # cleanup_data.sh
 # Prunes the data directories for each service, keeping only the last 2 versions.

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 # rollback_all.sh
 # Iterates through all services and executes their local rollback.sh script.
