@@ -1,25 +1,35 @@
 #!/usr/bin/env bash
-echo Restarting xqhare.net
 
+echo "------------------------------------------------"
+echo #
+echo "Restarting xqhare.net servers script started"
 echo #
 
-echo # Main
-echo Restarting Main service
+echo "Restarting Main service..."
 cd /home/master/docker/xqhare.net/main/
 docker compose restart
 cd ..
-echo Main service restarted.
+echo "Main service restarted."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Blog
-echo Restarting Blog service
+echo "Restarting Blog service..."
 cd /home/master/docker/xqhare.net/blog/
 docker compose restart
 cd ..
-echo Blog service restarted.
+echo "Blog service restarted."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Profile
-echo Restarting Profile service
+echo "Restarting Profile service..."
 cd /home/master/docker/xqhare.net/profile/
 docker compose restart
 cd ..
-echo Profile service restarted.
+echo "Profile service restarted."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
+
+echo "------------------------------------------------"
+echo #
+echo "Restarting xqhare.net servers script finished"
+echo #

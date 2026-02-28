@@ -1,26 +1,35 @@
 #!/usr/bin/env bash
-echo Stoping xqhare.net
 
+echo "------------------------------------------------"
+echo #
+echo "Stopping xqhare.net servers script started"
 echo #
 
-echo # Main
-echo Stoping Main service
+echo "Stopping Main service..."
 cd /home/master/docker/xqhare.net/main/
 docker compose down
 cd ..
-echo Main service up.
+echo "Main service stopped."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Blog
-echo Stoping Blog service
+echo "Stopping Blog service..."
 cd /home/master/docker/xqhare.net/blog/
 docker compose down
 cd ..
-echo Blog service up.
+echo "Blog service stopped."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Profile
-echo Stoping Profile service
+echo "Stopping Profile service..."
 cd /home/master/docker/xqhare.net/profile/
 docker compose down
 cd ..
-echo Profile service up.
+echo "Profile service stopped."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
+echo "------------------------------------------------"
+echo #
+echo "Stopping xqhare.net servers script finished"
+echo #

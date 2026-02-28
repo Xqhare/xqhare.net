@@ -1,25 +1,35 @@
 #!/usr/bin/env bash
-echo Starting xqhare.net
 
+echo "------------------------------------------------"
+echo #
+echo "Starting xqhare.net servers script started"
 echo #
 
-echo # Main
-echo Starting Main service
+echo "Starting Main service..."
 cd /home/master/docker/xqhare.net/main/
 docker compose up -d
 cd ..
-echo Main service up.
+echo "Main service started."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Blog
-echo Starting Blog service
+echo "Starting Blog service..."
 cd /home/master/docker/xqhare.net/blog/
 docker compose up -d
 cd ..
-echo Blog service up.
+echo "Blog service started."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Profile
-echo Starting Profile service
+echo "Starting Profile service..."
 cd /home/master/docker/xqhare.net/profile/
 docker compose up -d
 cd ..
-echo Profile service up.
+echo "Profile service started."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
+
+echo "------------------------------------------------"
+echo #
+echo "Starting xqhare.net servers script finished"
+echo #

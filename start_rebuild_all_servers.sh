@@ -1,31 +1,40 @@
 #!/usr/bin/env bash
-echo Starting \& rebuilding xqhare.net
 
+echo "------------------------------------------------"
+echo #
+echo "Starting & rebuilding xqhare.net servers script started"
 echo #
 
 # Doesn't rebuild the website content at all atm - only docker containers
 
-echo # Main
-echo Start \& rebuild Main service
+echo "Starting & rebuilding Main service..."
 cd /home/master/docker/xqhare.net/main/
 docker compose pull
 docker compose up -d && docker image prune -f
 cd ..
-echo Main service up \& rebuild.
+echo "Main service started & rebuilt."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Blog
-echo Start \& rebuild Blog service
+echo "Starting & rebuilding Blog service..."
 cd /home/master/docker/xqhare.net/blog/
 docker compose pull
 docker compose up -d && docker image prune -f
 cd ..
-echo Blog service up \& rebuild.
+echo "Blog service started & rebuilt."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
-echo # Profile
-echo Start \& rebuild Profile service
+echo "Starting & rebuilding Profile service..."
 cd /home/master/docker/xqhare.net/profile/
 docker compose pull
 docker compose up -d && docker image prune -f
 cd ..
-echo Profile service up \& rebuild.
+echo "Profile service started & rebuilt."
+echo "- - - - - - - - - - - - - - - - - - - - - - - -"
+echo #
 
+echo "------------------------------------------------"
+echo #
+echo "Starting & rebuilding xqhare.net servers script finished"
+echo #
