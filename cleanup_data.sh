@@ -9,6 +9,7 @@ for service in "${SERVICES[@]}"; do
     DATA_DIR="$service/data"
 
     if [ -d "$DATA_DIR" ]; then
+        echo #
         echo "Cleaning up $DATA_DIR..."
         
         # List directories in data dir, sort them by name (which are timestamps), 
@@ -17,17 +18,24 @@ for service in "${SERVICES[@]}"; do
         ENTRIES_TO_REMOVE=$(ls -1 "$DATA_DIR" | sort -r | tail -n +3)
 
         if [ -n "$ENTRIES_TO_REMOVE" ]; then
+            echo #
             echo "Found entries to remove in $service:"
             echo "$ENTRIES_TO_REMOVE"
             
+            echo #
             while read -r entry; do
                 echo "Removing $DATA_DIR/$entry..."
                 rm -rf "$DATA_DIR/$entry"
             done <<< "$ENTRIES_TO_REMOVE"
         else
+            echo #
             echo "No cleanup needed for $service (2 or fewer versions)."
         fi
     fi
 done
 
+echo #
 echo "Cleanup complete."
+echo "------------------------------------------------"
+echo #
+exit 0
