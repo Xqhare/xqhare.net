@@ -32,13 +32,12 @@ for service in "${SERVICES[@]}"; do
         else
             echo "No cleanup needed for $service (2 or fewer versions)."
         fi
+        echo "Cleanup for $service done."
         echo "- - - - - - - - - - - - - - - - - - - - - - - -"
         echo #
     fi
 done
 
-echo "------------------------------------------------"
-echo #
 echo "Cleanup data directories script finished"
-echo #
+echo "------------------------------------------------"
 exit 0

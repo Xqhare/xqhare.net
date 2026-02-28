@@ -34,7 +34,6 @@ echo "Profile service started & rebuilt."
 echo "- - - - - - - - - - - - - - - - - - - - - - - -"
 echo #
 
-echo "------------------------------------------------"
-echo #
 echo "Starting & rebuilding xqhare.net servers script finished"
-echo #
+echo "------------------------------------------------"
+exit 0

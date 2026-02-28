@@ -33,14 +33,13 @@ for dir_name in "${REPOS[@]}"; do
             echo "No changes to push in $dir_name"
         fi
         
+        echo "Processing for $dir_name done."
         echo "- - - - - - - - - - - - - - - - - - - - - - - -"
         echo #
         cd "$ROOT_DIR"
     fi
 done
 
-echo "------------------------------------------------"
-echo #
 echo "Push all git repositories script finished"
-echo #
+echo "------------------------------------------------"
 exit 0

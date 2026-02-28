@@ -29,7 +29,6 @@ echo "Profile service stopped."
 echo "- - - - - - - - - - - - - - - - - - - - - - - -"
 echo #
 
-echo "------------------------------------------------"
-echo #
 echo "Stopping xqhare.net servers script finished"
-echo #
+echo "------------------------------------------------"
+exit 0

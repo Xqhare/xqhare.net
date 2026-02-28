@@ -29,7 +29,6 @@ echo "Profile service restarted."
 echo "- - - - - - - - - - - - - - - - - - - - - - - -"
 echo #
 
-echo "------------------------------------------------"
-echo #
 echo "Restarting xqhare.net servers script finished"
-echo #
+echo "------------------------------------------------"
+exit 0

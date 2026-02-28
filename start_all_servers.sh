@@ -29,7 +29,6 @@ echo "Profile service started."
 echo "- - - - - - - - - - - - - - - - - - - - - - - -"
 echo #
 
-echo "------------------------------------------------"
-echo #
 echo "Starting xqhare.net servers script finished"
-echo #
+echo "------------------------------------------------"
+exit 0

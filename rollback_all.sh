@@ -26,8 +26,6 @@ for service in "${SERVICES[@]}"; do
     echo #
 done
 
-echo "------------------------------------------------"
-echo #
 echo "Rollback all services script finished"
-echo #
+echo "------------------------------------------------"
 exit 0
