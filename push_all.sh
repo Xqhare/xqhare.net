@@ -8,6 +8,13 @@ echo #
 # Get current directory
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+echo "Pushing root repository..."
+echo #
+git push
+echo #
+echo "Pushing root repository done."
+echo #
+
 # Define push order
 # We want to push global_assets LAST because it triggers rebuilds of all other services
 # This avoids race conditions where a service is building while global_assets is also building it
