@@ -11,17 +11,27 @@ Secondly it is used as part of the `xqhare.net` website structure.
 
 There are two kind of scripts in this repo.
 
+### Server Management
+
 Scripts dealing with setting up, rebuilding and restarting the docker containers end in `_servers.sh`.
 
-### `push_all.sh`
+- `start_all_servers.sh`: Starts all docker containers.
+- `stop_all_servers.sh`: Stops all docker containers.
+- `restart_all_servers.sh`: Restarts all docker containers.
+- `start_rebuild_all_servers.sh`: Pulls latest images and restarts all containers.
 
-This convenience script is used to push new content to all services.
+### Content Management
 
-### `rollback.sh`
+#### `push_all.sh`
 
-This script rolls back the content of all services to the previous state (if possible).
+This convenience script is used to push new content to all services. 
+**Note:** It pushes `global_assets` first to ensure templates are available for other services.
 
-### `cleanup_data.sh`
+#### `rollback_all.sh`
+
+This script rolls back the content of all services to the previous state (if possible) by calling each service's local `rollback.sh`.
+
+#### `cleanup_data.sh`
 
 This script cleans up the `data` directory of all services.
 It always keeps the latest two versions of the content to ensure there is always a state to roll back to.
