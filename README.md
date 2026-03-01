@@ -40,11 +40,11 @@ It always keeps the latest two versions of the content to ensure there is always
 
 The structure the scripts of this repo, as well as the repositories of the web services, expect a specific project structure to work properly.
 
--> [`xqhare.net/`](https://github.com/xqhare/xqhare.net)
-  -> [`blog/`](https://github.com/xqhare/blog)
-  -> [`profile/`](https://github.com/xqhare/profile)
-  -> [`global_assets/`](https://github.com/xqhare/global_assets)
-  -> [`main/`](https://github.com/xqhare/main)
+- [`xqhare.net/`](https://github.com/xqhare/xqhare.net)
+	- [`blog/`](https://github.com/xqhare/blog)
+	- [`profile/`](https://github.com/xqhare/profile)
+	- [`global_assets/`](https://github.com/xqhare/global_assets)
+	- [`main/`](https://github.com/xqhare/main)
 
 For details on each service, please refer to its specific repository.
 
