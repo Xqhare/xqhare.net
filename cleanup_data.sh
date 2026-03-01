@@ -16,6 +16,7 @@ for service in "${SERVICES[@]}"; do
 
     if [ -d "$DATA_DIR" ]; then
         echo "Cleaning up $DATA_DIR..."
+        echo #
         
         # List directories in data dir, sort them by name (which are timestamps), 
         # and remove all but the last 2.
@@ -32,6 +33,7 @@ for service in "${SERVICES[@]}"; do
         else
             echo "No cleanup needed for $service (2 or fewer versions)."
         fi
+        echo #
         echo "Cleanup for $service done."
         echo "- - - - - - - - - - - - - - - - - - - - - - - -"
         echo #
