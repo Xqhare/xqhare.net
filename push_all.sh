@@ -10,9 +10,9 @@ echo #
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Define push order
-# We want to push global_assets LAST because it triggers rebuilds of all other services
-# This avoids race conditions where a service is building while global_assets is also building it
-REPOS=("blog" "main" "profile" "global_assets")
+# We push global_assets FIRST so that its templates/CSS are available for 
+# the other services when they trigger their rebuilds on push.
+REPOS=("global_assets" "blog" "main" "profile")
 
 for dir_name in "${REPOS[@]}"; do
     if [ -d "$dir_name/.git" ]; then
