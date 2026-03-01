@@ -27,6 +27,10 @@ for dir_name in "${REPOS[@]}"; do
             git push
             if [ $? -eq 0 ]; then
                 echo "Successfully pushed $dir_name"
+                # Add a small delay after push to let the server hooks finish processing
+                # This helps prevent race conditions on shared directories like global_assets
+                echo "Waiting for server to process hooks..."
+                sleep 2
             else
                 echo "Error: Failed to push $dir_name"
                 exit 1
