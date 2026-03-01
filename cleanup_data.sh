@@ -24,7 +24,9 @@ for service in "${SERVICES[@]}"; do
 
         if [ -n "$ENTRIES_TO_REMOVE" ]; then
             echo "Found entries to remove in $service:"
+            echo #
             echo "$ENTRIES_TO_REMOVE"
+            echo #
             
             while read -r entry; do
                 echo "Removing $DATA_DIR/$entry..."
